@@ -14,42 +14,82 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.example.design_library.fromHex
+import androidx.ui.tooling.preview.Preview
+import androidx.ui.tooling.preview.PreviewParameter
+import com.example.design_library.colorPrimary
+
+const val THE_GROUP = "CTA"
+val buttonTextPrimary = TextStyle(color = Color.White, fontWeight = FontWeight.Bold)
 
 @Composable
-fun primaryButton(variant: String, text: String) {
-    val cmbPurple = Color.fromHex("#5b6fd0")
-    val containerModifier : Modifier
-    val textStyle : TextStyle
+fun cta(variant: String, text: String) {
     when (ButtonType.valueOf(variant)) {
         ButtonType.PRIMARY -> {
-            containerModifier = Modifier.clip(RoundedCornerShape(50))
-                .background(cmbPurple)
-                .wrapContentHeight()
-            textStyle = TextStyle(color = Color.White, fontWeight = FontWeight.Bold)
+            primaryButton(text)
         }
         ButtonType.DANGEROUS -> {
-            containerModifier = Modifier.clip(RoundedCornerShape(50))
-                .background(Color.Red)
-                .wrapContentHeight()
-            textStyle = TextStyle(color = Color.White, fontWeight = FontWeight.Bold)
+            dangerousButton(text)
         }
         ButtonType.SECONDARY -> {
-            containerModifier = Modifier.border(1.dp, cmbPurple, RoundedCornerShape(50))
-            textStyle = TextStyle()
+            secondaryButton(text)
         }
         ButtonType.POSITIVE -> {
-            containerModifier = Modifier.clip(RoundedCornerShape(50))
-                .background(Color.Green)
-                .wrapContentHeight()
-            textStyle = TextStyle(color = Color.White, fontWeight = FontWeight.Bold)
+            positiveButton(text)
         }
         ButtonType.HYPER_LINK -> {
-            containerModifier = Modifier
-            textStyle = TextStyle(color = cmbPurple, fontWeight = FontWeight.Bold)
+            hyperlink(text)
         }
     }
+}
+
+@Composable
+@Preview(name = "hyperlink", group = THE_GROUP)
+fun hyperlink(@PreviewParameter(ButtonTextProvider::class) text: String) {
+    val containerModifier = Modifier
+    val textStyle = TextStyle(color = colorPrimary, fontWeight = FontWeight.Bold)
     Box(modifier = containerModifier.padding(32.dp, 16.dp, 32.dp, 16.dp)) {
         Text(text, style = textStyle)
+    }
+}
+
+@Composable
+@Preview(name = "secondary", group = THE_GROUP)
+fun positiveButton(@PreviewParameter(ButtonTextProvider::class) text: String) {
+    val containerModifier = Modifier.clip(RoundedCornerShape(50))
+        .background(Color.Green)
+        .wrapContentHeight()
+    Box(modifier = containerModifier.padding(32.dp, 16.dp, 32.dp, 16.dp)) {
+        Text(text, style = buttonTextPrimary)
+    }
+}
+
+@Composable
+@Preview(name = "secondary", group = THE_GROUP)
+fun secondaryButton(@PreviewParameter(ButtonTextProvider::class) text: String) {
+    val containerModifier = Modifier.border(1.dp, colorPrimary, RoundedCornerShape(50))
+    Box(modifier = containerModifier.padding(32.dp, 16.dp, 32.dp, 16.dp)) {
+        Text(text)
+    }
+}
+
+@Composable
+@Preview(name = "dangerous", group = THE_GROUP)
+fun dangerousButton(@PreviewParameter(ButtonTextProvider::class) text: String) {
+    val containerModifier = Modifier.clip(RoundedCornerShape(50))
+        .background(Color.Red)
+        .wrapContentHeight()
+    Box(modifier = containerModifier.padding(32.dp, 16.dp, 32.dp, 16.dp)) {
+        Text(text, style = buttonTextPrimary)
+    }
+}
+
+@Composable
+@Preview(name = "primary", group = THE_GROUP)
+fun primaryButton(@PreviewParameter(ButtonTextProvider::class) text: String) {
+    val containerModifier = Modifier.clip(RoundedCornerShape(50))
+        .background(colorPrimary)
+        .wrapContentHeight()
+    Box(modifier = containerModifier.padding(32.dp, 16.dp, 32.dp, 16.dp)) {
+        Text(text, style = buttonTextPrimary)
     }
 }
