@@ -9,8 +9,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.setContent
 import androidx.compose.ui.unit.dp
+import com.example.design_library.UIElement
 import com.example.design_library.UIElementType
-import com.example.design_library.primaryButton
+import com.example.design_library.ctas.primaryButton
 
 class SingleComponentActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,7 +21,7 @@ class SingleComponentActivity : AppCompatActivity() {
         setContent {
             Box(modifier = Modifier.padding(16.dp)) {
                 when (uiElement.type) {
-                    UIElementType.BUTTON -> primaryButton(uiElement.variant)
+                    UIElementType.BUTTON -> primaryButton(uiElement.variant, uiElement.name)
                     UIElementType.TEXT -> TODO()
                 }
             }

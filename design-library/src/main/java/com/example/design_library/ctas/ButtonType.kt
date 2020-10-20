@@ -1,4 +1,4 @@
-package com.example.design_library
+package com.example.design_library.ctas
 
 enum class ButtonType {
     PRIMARY,

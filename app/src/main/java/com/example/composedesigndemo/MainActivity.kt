@@ -18,7 +18,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         val list = listOf(
-            generateSimpleItem("Buttons", UIElementType.BUTTON)
+            generateSimpleItem("Call-To-Actions", "Buttons and Hyper-links", UIElementType.BUTTON),
+            generateSimpleItem("Text", "Title, Heading 1, ..., paragraph", UIElementType.TEXT),
+            generateSimpleItem("Inputs", "Text input, checkboxes, radio buttons...", UIElementType.INPUT),
+            generateSimpleItem("Dialogs", "Pop-up, Bottom-Sheets", UIElementType.DIALOG),
+            generateSimpleItem("Colours", "Colours", UIElementType.COLOR),
+            generateSimpleItem("Custom", "Profile cards, chat item", UIElementType.CUSTOM),
         )
         setContent {
             LazyColumnFor(list) {
@@ -33,8 +38,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun generateSimpleItem(name: String, type: UIElementType): UIElementCategoryItem {
-        return UIElementCategoryItem(name, type) {
+    private fun generateSimpleItem(name: String, description: String, type: UIElementType): UIElementCategoryItem {
+        return UIElementCategoryItem(name, description, type) {
             startActivity(
                 ElementListActivity.newIntent(this, type)
             )
@@ -43,6 +48,7 @@ class MainActivity : AppCompatActivity() {
 
     data class UIElementCategoryItem(
         val name: String,
+        val description: String,
         val uiElementType: UIElementType,
         val clickListener: () -> Unit
     )

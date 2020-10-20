@@ -1,4 +1,4 @@
-package com.example.composedesigndemo
+package com.example.design_library
 
 import android.os.Parcelable
 import android.view.View
