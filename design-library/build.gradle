@@ -75,6 +75,6 @@ dependencies {
     implementation "androidx.compose.runtime:runtime-livedata:$compose_version"
     implementation "androidx.compose.runtime:runtime-rxjava2:$compose_version"
 
-    implementation "com.airbnb.android:showkase:1.0.0-alpha02"
-    kapt "com.airbnb.android:showkase-processor:1.0.0-alpha02"
+    implementation "com.airbnb.android:showkase:1.0.0-alpha03"
+    kapt "com.airbnb.android:showkase-processor:1.0.0-alpha03"
 }
