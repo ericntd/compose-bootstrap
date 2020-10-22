@@ -18,7 +18,7 @@ import androidx.ui.tooling.preview.Preview
 import androidx.ui.tooling.preview.PreviewParameter
 import com.example.design_library.colorPrimary
 
-const val THE_GROUP = "CTA"
+const val GROUP_CTA = "CTA"
 val buttonTextPrimary = TextStyle(color = Color.White, fontWeight = FontWeight.Bold)
 
 @Composable
@@ -43,7 +43,7 @@ fun cta(variant: String, text: String) {
 }
 
 @Composable
-@Preview(name = "hyperlink", group = THE_GROUP)
+@Preview(name = "hyperlink", group = GROUP_CTA)
 fun hyperlink(@PreviewParameter(ButtonTextProvider::class) text: String) {
     val containerModifier = Modifier
     val textStyle = TextStyle(color = colorPrimary, fontWeight = FontWeight.Bold)
@@ -53,7 +53,7 @@ fun hyperlink(@PreviewParameter(ButtonTextProvider::class) text: String) {
 }
 
 @Composable
-@Preview(name = "secondary", group = THE_GROUP)
+@Preview(name = "secondary", group = GROUP_CTA)
 fun positiveButton(@PreviewParameter(ButtonTextProvider::class) text: String) {
     val containerModifier = Modifier.clip(RoundedCornerShape(50))
         .background(Color.Green)
@@ -64,7 +64,7 @@ fun positiveButton(@PreviewParameter(ButtonTextProvider::class) text: String) {
 }
 
 @Composable
-@Preview(name = "secondary", group = THE_GROUP)
+@Preview(name = "secondary", group = GROUP_CTA)
 fun secondaryButton(@PreviewParameter(ButtonTextProvider::class) text: String) {
     val containerModifier = Modifier.border(1.dp, colorPrimary, RoundedCornerShape(50))
     Box(modifier = containerModifier.padding(32.dp, 16.dp, 32.dp, 16.dp)) {
@@ -73,7 +73,7 @@ fun secondaryButton(@PreviewParameter(ButtonTextProvider::class) text: String) {
 }
 
 @Composable
-@Preview(name = "dangerous", group = THE_GROUP)
+@Preview(name = "dangerous", group = GROUP_CTA)
 fun dangerousButton(@PreviewParameter(ButtonTextProvider::class) text: String) {
     val containerModifier = Modifier.clip(RoundedCornerShape(50))
         .background(Color.Red)
@@ -84,7 +84,7 @@ fun dangerousButton(@PreviewParameter(ButtonTextProvider::class) text: String) {
 }
 
 @Composable
-@Preview(name = "primary", group = THE_GROUP)
+@Preview(name = "primary", group = GROUP_CTA)
 fun primaryButton(@PreviewParameter(ButtonTextProvider::class) text: String) {
     val containerModifier = Modifier.clip(RoundedCornerShape(50))
         .background(colorPrimary)

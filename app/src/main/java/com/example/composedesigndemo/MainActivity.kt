@@ -21,34 +21,38 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val list = listOf(
-            generateSimpleItem("Call-To-Actions", "Buttons and Hyper-links", UIElementType.BUTTON),
-            generateSimpleItem("Text", "Title, Heading 1, ..., paragraph", UIElementType.TEXT),
-            generateSimpleItem("Inputs", "Text input, checkboxes, radio buttons...", UIElementType.INPUT),
-            generateSimpleItem("Dialogs", "Pop-up, Bottom-Sheets", UIElementType.DIALOG),
-            generateSimpleItem("Colours", "Colours", UIElementType.COLOR),
-            generateSimpleItem("Custom", "Profile cards, chat item", UIElementType.CUSTOM),
-        )
-        setContent {
-            Column {
-                Button(onClick = { startActivity(createShowkaseBrowserIntent(this@MainActivity)) }) {
-                    Text("Showkase")
-                }
-                Divider()
-                LazyColumnFor(list) {
-                    val modifier = Modifier.padding(all = 16.dp)
-                        .clickable(onClick = {
-                            it.clickListener.invoke()
-                        })
-                    Column(modifier = modifier) {
-                        Text(text = it.name)
-                    }
-                }
-            }
-        }
+        startActivity(createShowkaseBrowserIntent(this@MainActivity))
+        finish()
+
+//        val list = listOf(
+//            generateSimpleItem("Call-To-Actions", "Buttons and Hyper-links", UIElementType.BUTTON),
+//            generateSimpleItem("Text", "Title, Heading 1, ..., paragraph", UIElementType.TEXT),
+//            generateSimpleItem("Inputs", "Text input, checkboxes, radio buttons...", UIElementType.INPUT),
+//            generateSimpleItem("Dialogs", "Pop-up, Bottom-Sheets", UIElementType.DIALOG),
+//            generateSimpleItem("Colours", "Colours", UIElementType.COLOR),
+//            generateSimpleItem("Custom", "Profile cards, chat item", UIElementType.CUSTOM),
+//        )
+//        setContent {
+//            Column {
+//                Divider()
+//                LazyColumnFor(list) {
+//                    val modifier = Modifier.padding(all = 16.dp)
+//                        .clickable(onClick = {
+//                            it.clickListener.invoke()
+//                        })
+//                    Column(modifier = modifier) {
+//                        Text(text = it.name)
+//                    }
+//                }
+//            }
+//        }
     }
 
-    private fun generateSimpleItem(name: String, description: String, type: UIElementType): UIElementCategoryItem {
+    private fun generateSimpleItem(
+        name: String,
+        description: String,
+        type: UIElementType
+    ): UIElementCategoryItem {
         return UIElementCategoryItem(name, description, type) {
             startActivity(
                 ElementListActivity.newIntent(this, type)
