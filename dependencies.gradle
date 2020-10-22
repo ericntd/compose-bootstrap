@@ -1,0 +1,10 @@
+def buildConfig = [
+        buildTools: "28.0.3",
+        compileSdk: 28,
+        minSdk    : 23,
+        targetSdk : 28,
+]
+
+ext.config = [
+        "build": buildConfig,
+]
