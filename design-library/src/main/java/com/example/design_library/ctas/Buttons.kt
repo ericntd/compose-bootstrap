@@ -1,12 +1,12 @@
 package com.example.design_library.ctas
 
-import androidx.compose.foundation.Text
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -47,7 +47,7 @@ fun cta(variant: String, text: String) {
 fun hyperlink(@PreviewParameter(ButtonTextProvider::class) text: String) {
     val containerModifier = Modifier
     val textStyle = TextStyle(color = colorPrimary, fontWeight = FontWeight.Bold)
-    Box(modifier = containerModifier.padding(32.dp, 16.dp, 32.dp, 16.dp)) {
+    Box(modifier = containerModifier.padding(24.dp, 16.dp, 24.dp, 16.dp)) {
         Text(text, style = textStyle)
     }
 }
@@ -58,7 +58,7 @@ fun positiveButton(@PreviewParameter(ButtonTextProvider::class) text: String) {
     val containerModifier = Modifier.clip(RoundedCornerShape(50))
         .background(Color.Green)
         .wrapContentHeight()
-    Box(modifier = containerModifier.padding(32.dp, 16.dp, 32.dp, 16.dp)) {
+    Box(modifier = containerModifier.padding(24.dp, 16.dp, 24.dp, 16.dp)) {
         Text(text, style = buttonTextPrimary)
     }
 }
@@ -67,7 +67,7 @@ fun positiveButton(@PreviewParameter(ButtonTextProvider::class) text: String) {
 @Preview(name = "secondary", group = GROUP_CTA)
 fun secondaryButton(@PreviewParameter(ButtonTextProvider::class) text: String) {
     val containerModifier = Modifier.border(1.dp, colorPrimary, RoundedCornerShape(50))
-    Box(modifier = containerModifier.padding(32.dp, 16.dp, 32.dp, 16.dp)) {
+    Box(modifier = containerModifier.padding(24.dp, 16.dp, 24.dp, 16.dp)) {
         Text(text)
     }
 }
@@ -78,7 +78,7 @@ fun dangerousButton(@PreviewParameter(ButtonTextProvider::class) text: String) {
     val containerModifier = Modifier.clip(RoundedCornerShape(50))
         .background(Color.Red)
         .wrapContentHeight()
-    Box(modifier = containerModifier.padding(32.dp, 16.dp, 32.dp, 16.dp)) {
+    Box(modifier = containerModifier.padding(24.dp, 16.dp, 24.dp, 16.dp)) {
         Text(text, style = buttonTextPrimary)
     }
 }
@@ -89,7 +89,7 @@ fun primaryButton(@PreviewParameter(ButtonTextProvider::class) text: String) {
     val containerModifier = Modifier.clip(RoundedCornerShape(50))
         .background(colorPrimary)
         .wrapContentHeight()
-    Box(modifier = containerModifier.padding(32.dp, 16.dp, 32.dp, 16.dp)) {
+    Box(modifier = containerModifier.padding(24.dp, 16.dp, 24.dp, 16.dp)) {
         Text(text, style = buttonTextPrimary)
     }
 }

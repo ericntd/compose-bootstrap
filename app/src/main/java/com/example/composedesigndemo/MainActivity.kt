@@ -21,15 +21,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        startActivity(createShowkaseBrowserIntent(this@MainActivity))
-        finish()
+//        startActivity(createShowkaseBrowserIntent(this@MainActivity))
+//        finish()
 
         val list = listOf(
-            generateSimpleItem("Call-To-Actions", "Buttons and Hyper-links", UIElementType.BUTTON),
+            generateSimpleItem("Colours", "Colours", UIElementType.COLOR),
             generateSimpleItem("Text", "Title, Heading 1, ..., paragraph", UIElementType.TEXT),
+            generateSimpleItem("Call-To-Actions", "Buttons and Hyper-links", UIElementType.BUTTON),
             generateSimpleItem("Inputs", "Text input, checkboxes, radio buttons...", UIElementType.INPUT),
             generateSimpleItem("Dialogs", "Pop-up, Bottom-Sheets", UIElementType.DIALOG),
-            generateSimpleItem("Colours", "Colours", UIElementType.COLOR),
             generateSimpleItem("Custom", "Profile cards, chat item", UIElementType.CUSTOM),
         )
         setContent {
