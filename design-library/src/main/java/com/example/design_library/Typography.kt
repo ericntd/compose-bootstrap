@@ -21,7 +21,7 @@ object Typography {
 
     @ShowkaseTypography(name = "Body", group = "Text")
     val subhead = TextStyle(
-        color = titleTextColor,
+        color = MyTheme.colors.onSurface,
         fontSize = 14.sp
     )
 }
