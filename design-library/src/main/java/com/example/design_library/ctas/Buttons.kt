@@ -16,10 +16,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
 import androidx.ui.tooling.preview.PreviewParameter
+import com.example.design_library.MyTheme
+import com.example.design_library.MyTypography
 import com.example.design_library.colorPrimary
 
 const val GROUP_CTA = "CTA"
-val buttonTextPrimary = TextStyle(color = Color.White, fontWeight = FontWeight.Bold)
 
 @Composable
 fun cta(variant: String, text: String) {
@@ -46,7 +47,8 @@ fun cta(variant: String, text: String) {
 @Preview(name = "hyperlink", group = GROUP_CTA)
 fun hyperlink(@PreviewParameter(ButtonTextProvider::class) text: String) {
     val containerModifier = Modifier
-    val textStyle = TextStyle(color = colorPrimary, fontWeight = FontWeight.Bold)
+    val textStyle = MyTypography.button.copy(color = MyTheme.colors.primary)
+    TextStyle(color = colorPrimary, fontWeight = FontWeight.Bold)
     Box(modifier = containerModifier.padding(24.dp, 16.dp, 24.dp, 16.dp)) {
         Text(text, style = textStyle)
     }
@@ -59,7 +61,7 @@ fun positiveButton(@PreviewParameter(ButtonTextProvider::class) text: String) {
         .background(Color.Green)
         .wrapContentHeight()
     Box(modifier = containerModifier.padding(24.dp, 16.dp, 24.dp, 16.dp)) {
-        Text(text, style = buttonTextPrimary)
+        Text(text, style = MyTypography.button)
     }
 }
 
@@ -68,7 +70,7 @@ fun positiveButton(@PreviewParameter(ButtonTextProvider::class) text: String) {
 fun secondaryButton(@PreviewParameter(ButtonTextProvider::class) text: String) {
     val containerModifier = Modifier.border(1.dp, colorPrimary, RoundedCornerShape(50))
     Box(modifier = containerModifier.padding(24.dp, 16.dp, 24.dp, 16.dp)) {
-        Text(text)
+        Text(text, style = MyTypography.button.copy(color = MyTheme.colors.primary))
     }
 }
 
@@ -79,7 +81,7 @@ fun dangerousButton(@PreviewParameter(ButtonTextProvider::class) text: String) {
         .background(Color.Red)
         .wrapContentHeight()
     Box(modifier = containerModifier.padding(24.dp, 16.dp, 24.dp, 16.dp)) {
-        Text(text, style = buttonTextPrimary)
+        Text(text, style = MyTypography.button)
     }
 }
 
@@ -90,6 +92,6 @@ fun primaryButton(@PreviewParameter(ButtonTextProvider::class) text: String) {
         .background(colorPrimary)
         .wrapContentHeight()
     Box(modifier = containerModifier.padding(24.dp, 16.dp, 24.dp, 16.dp)) {
-        Text(text, style = buttonTextPrimary)
+        Text(text, style = MyTypography.button)
     }
 }

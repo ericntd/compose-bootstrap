@@ -23,7 +23,9 @@ class ElementListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val list = when (intent.getSerializableExtra(ARG_UI_ELEMENT_TYPE)!! as UIElementType) {
+        val uiElementType = intent.getSerializableExtra(ARG_UI_ELEMENT_TYPE)!! as UIElementType
+        this.title = uiElementType.toString()
+        val list = when (uiElementType) {
             UIElementType.BUTTON -> ButtonRepository.fetchButtons()
             UIElementType.TEXT -> TODO()
             UIElementType.INPUT -> TODO()
