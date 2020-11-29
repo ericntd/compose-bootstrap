@@ -76,5 +76,5 @@ dependencies {
     implementation "androidx.compose.runtime:runtime-livedata:$compose_version"
     implementation "androidx.compose.runtime:runtime-rxjava2:$compose_version"
 
-    implementation(project(":design-library"))
+    implementation(project(':compose-bootstrap'))
 }

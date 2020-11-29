@@ -3,9 +3,9 @@ package com.example.design_library.ctas
 import com.example.design_library.UIElement
 import com.example.design_library.UIElementType
 
-object ButtonRepository {
-    fun fetchButtons(): List<UIElement> {
-        return listOf(
+object CtaTypeRegistry {
+    val buttonTypes: List<UIElement>
+        get() = listOf(
             UIElement(
                 "A Primary Action",
                 "Should be used for main action except for positive and dangerous cases",
@@ -37,5 +37,4 @@ object ButtonRepository {
                 ButtonType.HYPER_LINK.toString()
             ),
         )
-    }
 }

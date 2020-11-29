@@ -10,8 +10,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/design-library" />
+            <option value="$PROJECT_DIR$/compose-bootstrap" />
+            <option value="$PROJECT_DIR$/compose-bootstrap-demo" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

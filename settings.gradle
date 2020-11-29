@@ -1,3 +1,3 @@
 rootProject.name = "Compose Design Demo"
-include ':app'
-include ':design-library'
+include ':compose-bootstrap-demo'
+include ':compose-bootstrap'

@@ -5,18 +5,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.compose.foundation.background
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumnFor
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.darkColors
-import androidx.compose.material.lightColors
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.setContent
 import androidx.compose.ui.unit.dp
 import com.example.design_library.*
-import com.example.design_library.ctas.ButtonRepository
+import com.example.design_library.ctas.CtaTypeRegistry
 import com.example.design_library.ctas.cta
 
 class ElementListActivity : AppCompatActivity() {
@@ -26,7 +21,7 @@ class ElementListActivity : AppCompatActivity() {
         val uiElementType = intent.getSerializableExtra(ARG_UI_ELEMENT_TYPE)!! as UIElementType
         this.title = uiElementType.toString()
         val list = when (uiElementType) {
-            UIElementType.BUTTON -> ButtonRepository.fetchButtons()
+            UIElementType.BUTTON -> CtaTypeRegistry.buttonTypes
             UIElementType.TEXT -> TODO()
             UIElementType.INPUT -> TODO()
             UIElementType.DIALOG -> TODO()
