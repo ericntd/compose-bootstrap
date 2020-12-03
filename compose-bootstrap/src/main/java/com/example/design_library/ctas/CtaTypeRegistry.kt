@@ -10,31 +10,31 @@ object CtaTypeRegistry {
                 "A Primary Action",
                 "Should be used for main action except for positive and dangerous cases",
                 UIElementType.BUTTON,
-                ButtonType.PRIMARY.toString()
+                Buttons.Type.PRIMARY.toString()
             ),
             UIElement(
                 "A Secondary Action",
                 "Secondary actions like Cancel",
                 UIElementType.BUTTON,
-                ButtonType.SECONDARY.toString()
+                Buttons.Type.SECONDARY.toString()
             ),
             UIElement(
                 "A Positive Action",
                 "Buy stuffs?",
                 UIElementType.BUTTON,
-                ButtonType.POSITIVE.toString()
+                Buttons.Type.POSITIVE.toString()
             ),
             UIElement(
                 "A Dangerous Action",
                 "Delete profile?",
                 UIElementType.BUTTON,
-                ButtonType.DANGEROUS.toString()
+                Buttons.Type.DANGEROUS.toString()
             ),
             UIElement(
                 "A Hyperlink",
                 "Terms & conditions?",
                 UIElementType.BUTTON,
-                ButtonType.HYPER_LINK.toString()
+                Buttons.Type.HYPER_LINK.toString()
             ),
         )
 }

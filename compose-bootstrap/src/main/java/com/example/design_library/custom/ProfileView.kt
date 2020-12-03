@@ -12,8 +12,6 @@ import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
 import com.example.design_library.R
-import com.example.design_library.texts.subhead
-import com.example.design_library.texts.title3
 
 const val GROUP_CUSTOM = "CUSTOM"
 
@@ -30,9 +28,9 @@ fun profileView() {
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.fillMaxSize().layoutId("image")
             )
-            title3(text = "33, Toronto", Modifier.layoutId("title"))
-            subhead(text = "Singer/ Composer", Modifier.layoutId("subtitle1"))
-            subhead(text = "Abc afew", Modifier.layoutId("subtitle2"))
+//            title3(text = "33, Toronto", Modifier.layoutId("title"))
+//            subhead(text = "Singer/ Composer", Modifier.layoutId("subtitle1"))
+//            subhead(text = "Abc afew", Modifier.layoutId("subtitle2"))
         }
     }
 }

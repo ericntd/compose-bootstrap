@@ -7,12 +7,16 @@ import android.os.Bundle
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumnFor
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.emptyContent
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.setContent
 import androidx.compose.ui.unit.dp
+import com.example.cmb_compose.CmbTypeRegistry
+import com.example.cmb_compose.emptyState
 import com.example.design_library.*
+import com.example.design_library.ctas.Buttons.cta
 import com.example.design_library.ctas.CtaTypeRegistry
-import com.example.design_library.ctas.cta
 
 class ElementListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +30,7 @@ class ElementListActivity : AppCompatActivity() {
             UIElementType.INPUT -> TODO()
             UIElementType.DIALOG -> TODO()
             UIElementType.COLOR -> TODO()
-            UIElementType.CUSTOM -> TODO()
+            UIElementType.CUSTOM -> CmbTypeRegistry.cmbTypes
         }
 
         setContent {
@@ -43,18 +47,25 @@ class ElementListActivity : AppCompatActivity() {
                             .background(color = MyTheme.colors.surface)
                             .padding(16.dp) // now this is really padding
                     ) {
-                        cta(uiElement.variant, uiElement.name)
                         when (uiElement.type) {
                             UIElementType.BUTTON -> cta(uiElement.variant, uiElement.name)
                             UIElementType.TEXT -> TODO()
                             UIElementType.INPUT -> TODO()
                             UIElementType.DIALOG -> TODO()
                             UIElementType.COLOR -> TODO()
-                            UIElementType.CUSTOM -> TODO()
+                            UIElementType.CUSTOM -> renderCustom(uiElement)
                         }
                     }
                 }
             }
+        }
+    }
+
+    @Composable
+    fun renderCustom(uiElement: UIElement) {
+        when (uiElement.name) {
+            "empty_state" -> emptyState()
+            else -> Unit
         }
     }
 

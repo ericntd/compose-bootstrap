@@ -46,8 +46,7 @@ object MyTheme {
 
 @Composable
 fun myTheme(content: @Composable () -> Unit) {
-//    MyTheme.colors = if (isSystemInDarkTheme()) DarkColors else LightColors
-//    MaterialTheme(colors = MyTheme.colors) {}
+    MyTheme.colors = if (isSystemInDarkTheme()) DarkColors else LightColors
     content.invoke()
 }
 

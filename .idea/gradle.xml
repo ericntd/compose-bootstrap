@@ -10,6 +10,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/cmb-compose" />
             <option value="$PROJECT_DIR$/compose-bootstrap" />
             <option value="$PROJECT_DIR$/compose-bootstrap-demo" />
           </set>

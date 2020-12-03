@@ -1,3 +1,4 @@
 rootProject.name = "Compose Design Demo"
 include ':compose-bootstrap-demo'
 include ':compose-bootstrap'
+include ':cmb-compose'
