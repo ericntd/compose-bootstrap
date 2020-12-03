@@ -4,7 +4,7 @@ apply from: './dependencies.gradle'
 
 buildscript {
     ext.kotlin_version = "1.4.10"
-    ext.compose_version = "1.0.0-alpha07"
+    ext.compose_version = "1.0.0-alpha08"
     repositories {
         google()
         jcenter()
