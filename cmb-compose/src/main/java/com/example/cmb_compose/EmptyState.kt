@@ -1,9 +1,7 @@
 package com.example.cmb_compose
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -14,15 +12,45 @@ import com.example.design_library.R
 import com.example.design_library.ctas.Buttons
 import com.example.design_library.ctas.Buttons.cta
 
+/**
+ * Nesting the items under Boxes shouldn't be necessary
+ * There are bugs and limitations at the moment
+ * - Composable function with @Preview cannot 2nd argument now
+ * - Without @Preview, component failed to render silently
+ */
 @Composable
 fun emptyState() {
-    Box(Modifier.height(500.dp)) {
-        Column(Modifier.align(Alignment.Center)) {
+    ConstraintLayout(Modifier.height(1000.dp)) {
+        val (image, title, desc, button) = createRefs()
+        createVerticalChain(image, title, desc, button, chainStyle = ChainStyle.Packed)
+
+        Box(Modifier.constrainAs(image) {
+            top.linkTo(parent.top)
+            start.linkTo(parent.start)
+            end.linkTo(parent.end)
+        }) {
             Image(asset = imageResource(id = R.drawable.gear_new_pet_1168772154))
-            MyTypography.h2(
-                "This is the title"
-            )
-            MyTypography.body("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum")
+        }
+        Box(Modifier.constrainAs(title) {
+            start.linkTo(parent.start)
+            end.linkTo(parent.end)
+            top.linkTo(image.bottom)
+        }) {
+            MyTypography.h2("This is the title")
+        }
+        Box(Modifier.constrainAs(desc) {
+            start.linkTo(parent.start)
+            end.linkTo(parent.end)
+            top.linkTo(title.bottom)
+        }) {
+            MyTypography.body("Lorem Ipsum is simply dummy text of the printing and typesetting industry")
+        }
+        Box(Modifier.constrainAs(button) {
+            start.linkTo(parent.start)
+            end.linkTo(parent.end)
+            top.linkTo(desc.bottom)
+            bottom.linkTo(parent.bottom)
+        }) {
             cta(Buttons.Type.PRIMARY.toString(), "Take action now!")
         }
     }
