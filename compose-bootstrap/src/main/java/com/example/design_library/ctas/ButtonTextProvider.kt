@@ -1,6 +1,6 @@
 package com.example.design_library.ctas
 
-import androidx.ui.tooling.preview.PreviewParameterProvider
+import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 
 class ButtonTextProvider : PreviewParameterProvider<String> {
     override val values: Sequence<String>

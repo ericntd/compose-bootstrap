@@ -7,19 +7,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.font.font
-import androidx.compose.ui.text.font.fontFamily
+import androidx.compose.ui.text.font.*
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.airbnb.android.showkase.annotation.ShowkaseTypography
 
-val Roboto = fontFamily(
-    font(R.font.roboto_regular),
-    font(R.font.roboto_medium, FontWeight.Medium),
-    font(R.font.roboto_bold, FontWeight.Bold),
-    font(R.font.roboto_thin, FontWeight.Thin),
-    font(R.font.roboto_light, FontWeight.Light),
+val Roboto = FontFamily(
+    Font(R.font.roboto_regular),
+    Font(R.font.roboto_medium, FontWeight.Medium),
+    Font(R.font.roboto_bold, FontWeight.Bold),
+    Font(R.font.roboto_thin, FontWeight.Thin),
+    Font(R.font.roboto_light, FontWeight.Light),
 )
 
 private val myTypography = Typography(
@@ -46,10 +43,8 @@ object MyTypography {
     private val h2 = myTypography.h2
 
 
-    @ShowkaseTypography(name = "Body", group = "Text")
     val body = myTypography.body1
 
-    @ShowkaseTypography(name = "Body", group = "Text")
     val subhead = TextStyle(
         color = MyTheme.colors.onSurface,
         fontSize = 14.sp

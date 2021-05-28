@@ -6,7 +6,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.imageResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.constraintlayout.compose.ChainStyle
+import androidx.constraintlayout.compose.ConstraintLayout
 import com.example.design_library.MyTypography
 import com.example.design_library.R
 import com.example.design_library.ctas.Buttons
@@ -29,7 +32,7 @@ fun emptyState() {
             start.linkTo(parent.start)
             end.linkTo(parent.end)
         }) {
-            Image(asset = imageResource(id = R.drawable.gear_new_pet_1168772154))
+            Image(painter = painterResource(id = R.drawable.gear_new_pet_1168772154), contentDescription = "feafe")
         }
         Box(Modifier.constrainAs(title) {
             start.linkTo(parent.start)

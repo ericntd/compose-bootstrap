@@ -8,9 +8,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.layoutId
-import androidx.compose.ui.res.imageResource
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.ui.tooling.preview.Preview
+import com.example.design_library.MyTypography.h2
+import com.example.design_library.MyTypography.subhead
 import com.example.design_library.R
 
 const val GROUP_CUSTOM = "CUSTOM"
@@ -24,13 +26,14 @@ fun profileView() {
     ) {
         Column(modifier = Modifier.padding(0.dp, 0.dp, 0.dp, 32.dp)) {
             Image(
-                asset = imageResource(id = R.drawable.gear_new_pet_1168772154),
+                painter = painterResource(id = R.drawable.gear_new_pet_1168772154),
+                contentDescription = "wtf",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.fillMaxSize().layoutId("image")
             )
-//            title3(text = "33, Toronto", Modifier.layoutId("title"))
-//            subhead(text = "Singer/ Composer", Modifier.layoutId("subtitle1"))
-//            subhead(text = "Abc afew", Modifier.layoutId("subtitle2"))
+            h2(text = "33, Toronto", Modifier.layoutId("title"))
+            subhead(text = "Singer/ Composer", Modifier.layoutId("subtitle1"))
+            subhead(text = "Abc afew", Modifier.layoutId("subtitle2"))
         }
     }
 }

@@ -3,7 +3,6 @@ package com.example.design_library
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.*
 import androidx.compose.ui.graphics.Color
-import com.airbnb.android.showkase.annotation.ShowkaseColor
 import androidx.compose.runtime.Composable
 import kotlin.random.Random
 
@@ -53,14 +52,10 @@ fun myTheme(content: @Composable () -> Unit) {
 /**
  * Contextual colours
  */
-@ShowkaseColor
 val colorPrimary = MyTheme.colors.primary
 
-@ShowkaseColor
 val buttonColor = MyTheme.colors.primary
 
-@ShowkaseColor
 val textSurface = MyTheme.colors.onSurface
 
-@ShowkaseColor
 val cardBackgroundColor = MyTheme.colors.surface
